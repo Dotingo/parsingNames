@@ -4,14 +4,14 @@ import java.io.File
 import java.lang.Exception
 
 fun parseWebsite() {
-    val url = "https://www.behindthename.com/names/gender/feminine/usage/english/language/english/relationship/core/"
+    val baseUrl = "https://www.behindthename.com/names/gender/feminine/usage/english/language/english/relationship/core/"
 
     val fileName = "C:\\Users\\m9132\\IdeaProjects\\parsing\\src\\main\\kotlin\\names.txt"
     val file = File(fileName)
     val namesSet = mutableSetOf<String>()
 
     for (page in 1..7) {
-        val url = url + page
+        val url = "baseUrl$page"
         try {
             val doc: Document = Jsoup.connect(url).get()
 
